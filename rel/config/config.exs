@@ -113,7 +113,7 @@ end
 
 # Configure CORS
 config :elixir_boilerplate, :corsica,
-  origins: System.get_env("CORS_ALLOWED_ORIGINS"),
+  origins: String.split(System.get_env("CORS_ALLOWED_ORIGINS"), ","),
   allow_headers: :all
 
 # Configure Sentry
