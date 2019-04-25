@@ -111,6 +111,11 @@ if Utils.Environment.exists?("BASIC_AUTH_USERNAME") do
     ]
 end
 
+# Configure CORS
+config :elixir_boilerplate, :corsica,
+  origins: System.get_env("CORS_ALLOWED_ORIGINS"),
+  allow_headers: :all
+
 # Configure Sentry
 config :sentry,
   dsn: Utils.Environment.get("SENTRY_DSN"),
